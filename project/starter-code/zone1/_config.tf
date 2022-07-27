@@ -1,6 +1,6 @@
 terraform {
    backend "s3" {
-     bucket = "udacity-tf-<user_name>"
+     bucket = "udacity-tf-nieled"
      key    = "terraform/terraform.tfstate"
      region = "us-east-2"
    }
@@ -8,7 +8,7 @@ terraform {
 
  provider "aws" {
    region = "us-east-2"
-   
+
    default_tags {
      tags = local.tags
    }
