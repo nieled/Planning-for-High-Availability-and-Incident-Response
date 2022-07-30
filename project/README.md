@@ -18,7 +18,7 @@ Clone the appropriate git repo with the starter code. There will be 2 folders. Z
 
 ### Installation
 
-1. Open your AWS console and ensure it is set for region `us-east-1`. Open the CloudShell by clicking the little shell icon in the toolbar at the top near the search box. 
+1. Open your AWS console and ensure it is set for region `us-east-1`. Open the CloudShell by clicking the little shell icon in the toolbar at the top near the search box.
 
 <!-- 1. Set up your aws credentials from Udacity AWS Gateway locally
     - https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html
@@ -31,10 +31,17 @@ Clone the appropriate git repo with the starter code. There will be 2 folders. Z
     ```shell
     aws ec2 create-restore-image-task --object-key ami-0ec6fdfb365e5fc00.bin --bucket udacity-srend --name "udacity-<your_name>"
     ```
+    `ami-0183fe4d3755bef6b`
     <!-- - Replace the owner field in `_data.tf` with your Amazon owner ID assigned on the AMI (you can get this in the console by going to EC2 - AMIs and selecting the Owned by me at the top filter) -->
     - Take note of that AMI ID the script just output. Copy the AMI to `us-east-2` and `us-west-1`:
         - `aws ec2 copy-image --source-image-id <your-ami-id-from-above> --source-region us-east-1 --region us-east-2 --name "udacity-<your_name>"`
+        - `aws ec2 copy-image --source-image-id ami-0183fe4d3755bef6b --source-region us-east-1 --region us-east-2 --name "udacity-nieled"`
+
+        `ami-0c610d30a17eb9be5`
         - `aws ec2 copy-image --source-image-id <your-ami-id-from-above> --source-region us-east-1 --region us-west-1 --name "udacity-<your_name>"`
+        - `aws ec2 copy-image --source-image-id ami-0183fe4d3755bef6b --source-region us-east-1 --region us-west-1 --name "udacity-nieled"`
+
+        `ami-0fe7bf597a987bd4c`
 
     - Make note of the ami output from the above 2 commands. You'll need to put this in the `ec2.tf` file for `zone1` for `us-east-2` and in `ec2.tf` file for `zone2` for `us-west-1` respectively
 
@@ -90,7 +97,7 @@ Clone the appropriate git repo with the starter code. There will be 2 folders. Z
    <!-- - Change context to `udacity` namespace
      - `kubectl config set-context --current --namespace=udacity` -->
 
-<!-- 5. Once the script finishes **Configure nginx** 
+<!-- 5. Once the script finishes **Configure nginx**
 `sudo nano /etc/nginx/sites-enabled/default`
 
 ```

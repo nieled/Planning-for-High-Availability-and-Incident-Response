@@ -3,7 +3,7 @@
    instance_count     = var.instance_count
    name               = local.name
    account            = data.aws_caller_identity.current.account_id
-   aws_ami            = "ami-0acf725216201312f"
+   aws_ami            = "ami-0c610d30a17eb9be5"
    private_subnet_ids = module.vpc.private_subnet_ids
    public_subnet_ids  = module.vpc.public_subnet_ids
    vpc_id             = module.vpc.vpc_id
