@@ -19,21 +19,9 @@ provider "aws" {
   default_tags {
     tags = local.tags
   }
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.28"
-    }
-  }
 }
 
 provider "aws" {
   alias  = "usw1"
   region = "us-west-1"
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 4.28"
-    }
-  }
 }
